@@ -1,24 +1,21 @@
 # Exercise 1: Variable Practice
-# TODO: Create variables for student information
+# See EXERCISES.md for full instructions
+# Check answers/exercise1.py for the solution
 
-# 1. Create a variable for student name
-student_name = "Juan Dela Cruz"
+# TODO: Create a variable for student name (string)
 
-# 2. Create a variable for student age
-age = 20
 
-# 3. Create a variable for number of subjects
-num_subjects = 5
+# TODO: Create a variable for student age (integer)
 
-# 4. Create a variable for average grade
-average_grade = 85.5
 
-# 5. Create a variable for whether student is graduating
-is_graduating = True
+# TODO: Create a variable for number of subjects (integer)
 
-# Print all variables to see their values
-print("Student Name:", student_name)
-print("Age:", age)
-print("Number of subjects:", num_subjects)
-print("Average grade:", average_grade)
-print("Is graduating:", is_graduating)
+
+# TODO: Create a variable for average grade (float)
+
+
+# TODO: Create a variable for whether student is graduating (boolean)
+
+
+# TODO: Print all variables to see their values
+

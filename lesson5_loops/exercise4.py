@@ -1,68 +1,27 @@
 # Exercise 4: Interactive Grade Entry
+# Check answers/exercise4.py for the solution
 
-# Grade-to-quality-point mapping
-grade_points = {
-    "A": 4.0,
-    "B+": 3.5,
-    "B": 3.0,
-    "C+": 2.5,
-    "C": 2.0,
-    "D": 1.0,
-    "F": 0.0
-}
+# TODO: Create grade_points dictionary
 
-# Store all grades
-all_grades = []
 
-# Interactive grade entry
-print("=== Interactive Grade Entry ===")
-print("Enter 'done' to finish entering grades")
+# TODO: Create empty list called all_grades
 
-while True:
-    print(f"\nGrade Entry #{len(all_grades) + 1}")
-    subject = input("Subject name: ")
-    
-    if subject.lower() == 'done':
-        break
-    
-    # Get grade
-    while True:
-        grade = input("Grade: ")
-        if grade in grade_points:
-            break
-        else:
-            print("Invalid grade!")
-    
-    # Get credits
-    while True:
-        try:
-            credits = int(input("Credits: "))
-            if credits > 0:
-                break
-            else:
-                print("Credits must be positive!")
-        except ValueError:
-            print("Please enter a valid number!")
-    
-    # Store grade
-    all_grades.append({
-        'subject': subject,
-        'grade': grade,
-        'credits': credits,
-        'points': grade_points[grade]
-    })
-    
-    print(f"Added: {subject} - {grade} ({credits} credits)")
 
-# Calculate and display QPI
-if all_grades:
-    total_points = sum(grade['points'] * grade['credits'] for grade in all_grades)
-    total_credits = sum(grade['credits'] for grade in all_grades)
-    qpi = total_points / total_credits
-    
-    print(f"\n=== Final QPI Report ===")
-    print(f"Total Subjects: {len(all_grades)}")
-    print(f"Total Credits: {total_credits}")
-    print(f"QPI: {qpi:.2f}")
-else:
-    print("No grades entered!")
+# TODO: Print header and instructions
+
+
+# TODO: Create infinite while loop for interactive entry
+# - Print current entry number
+# - Get subject name
+# - If subject is 'done', break the loop
+# - Get grade with validation (while loop)
+# - Get units with validation (while loop, must be positive)
+# - Append to all_grades list
+# - Print confirmation message
+
+
+# TODO: Calculate and display QPI if grades were entered
+# - Calculate total_points and total_units using sum()
+# - Calculate qpi
+# - Print final report with total subjects, total units, and QPI
+

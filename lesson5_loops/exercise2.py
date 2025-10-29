@@ -1,42 +1,26 @@
 # Exercise 2: Grade Input with Validation
+# Check answers/exercise2.py for the solution
 
-# Valid grades
-valid_grades = ["A", "B+", "B", "C+", "C", "D", "F"]
+# TODO: Create valid_grades list: ["A", "B+", "B", "C+", "C", "D", "F"]
 
-# Grade-to-quality-point mapping
-grade_points = {
-    "A": 4.0,
-    "B+": 3.5,
-    "B": 3.0,
-    "C+": 2.5,
-    "C": 2.0,
-    "D": 1.0,
-    "F": 0.0
-}
 
-# Get number of subjects
-num_subjects = int(input("How many subjects do you have? "))
+# TODO: Create grade_points dictionary
 
-# Collect grades with validation
-subject_grades = {}
-for i in range(num_subjects):
-    subject = input(f"\nEnter subject {i+1} name: ")
-    
-    # Keep asking until valid grade is entered
-    while True:
-        grade = input(f"Enter grade for {subject}: ")
-        if grade in valid_grades:
-            subject_grades[subject] = grade
-            break
-        else:
-            print("Invalid grade! Valid grades are:", ", ".join(valid_grades))
 
-# Display results
-print("\n=== Your Grades ===")
-total_points = 0
-for subject, grade in subject_grades.items():
-    points = grade_points[grade]
-    total_points += points
-    print(f"{subject}: {grade} ({points} quality points)")
+# TODO: Get number of subjects from user
 
-print(f"\nTotal Quality Points: {total_points}")
+
+# TODO: Create empty dictionary called subject_grades
+
+
+# TODO: Create a loop to collect grades for each subject
+# For each subject:
+#   - Get subject name
+#   - Use a while loop to get valid grade (keep asking until valid)
+#   - Get units (convert to integer)
+#   - Store in subject_grades dictionary with subject name as key
+#   - Value should be a dictionary with 'grade', 'units', and 'points'
+
+
+# TODO: Print all collected grades
+

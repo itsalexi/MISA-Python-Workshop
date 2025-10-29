@@ -118,13 +118,13 @@ The QPI system uses the following grade-to-quality-point mapping:
 
 **QPI Formula:**
 ```
-QPI = (Sum of (Grade Points × Credits)) / Total Credits
+QPI = (Sum of (Grade Points × Units)) / Total Units
 ```
 
 **Example:**
-- Math: A (3 credits) = 4.0 × 3 = 12.0
-- English: B+ (3 credits) = 3.5 × 3 = 10.5
-- History: B (2 credits) = 3.0 × 2 = 6.0
+- Math: A (3 units) = 4.0 × 3 = 12.0
+- English: B+ (3 units) = 3.5 × 3 = 10.5
+- History: B (2 units) = 3.0 × 2 = 6.0
 - **Total:** 28.5 ÷ 8 = **3.56 QPI**
 
 ## 🙏 Acknowledgments

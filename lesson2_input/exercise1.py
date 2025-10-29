@@ -1,13 +1,17 @@
 # Exercise 1: Basic Input Practice
+# Check answers/exercise1.py for the solution
 
-# Get student information from user
-print("=== Student Information ===")
-student_name = input("Enter student name: ")
-age = int(input("Enter age: "))
-course = input("Enter course: ")
+# TODO: Print a header "=== Student Information ==="
 
-# Display the information
-print("\nStudent Information:")
-print("Name:", student_name)
-print("Age:", age)
-print("Course:", course)
+
+# TODO: Get student name from user using input()
+
+
+# TODO: Get age from user and convert to integer
+
+
+# TODO: Get course from user
+
+
+# TODO: Display all the information
+

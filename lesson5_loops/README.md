@@ -172,14 +172,14 @@ for i in range(num_subjects):
         else:
             print("Invalid grade! Please enter a valid grade.")
 
-    # Get credits
+    # Get units
     while True:
         try:
-            credits = int(input("Enter number of credits: "))
-            if credits > 0:
+            units = int(input("Enter number of units: "))
+            if units > 0:
                 break
             else:
-                print("Credits must be positive!")
+                print("Units must be positive!")
         except ValueError:
             print("Please enter a valid number!")
 
@@ -187,29 +187,29 @@ for i in range(num_subjects):
     subjects.append({
         'name': subject,
         'grade': grade,
-        'credits': credits,
+        'units': units,
         'points': grade_points[grade]
     })
 
 # Calculate QPI
 total_quality_points = 0
-total_credits = 0
+total_units = 0
 
 print("\n=== Grade Summary ===")
 for subject in subjects:
-    weighted_points = subject['points'] * subject['credits']
+    weighted_points = subject['points'] * subject['units']
     total_quality_points += weighted_points
-    total_credits += subject['credits']
+    total_units += subject['units']
 
     print(f"{subject['name']}: {subject['grade']} "
-          f"({subject['credits']} credits, {subject['points']} points)")
+          f"({subject['units']} units, {subject['points']} points)")
 
 # Calculate and display QPI
-if total_credits > 0:
-    qpi = total_quality_points / total_credits
+if total_units > 0:
+    qpi = total_quality_points / total_units
     print(f"\n=== QPI Calculation ===")
     print(f"Total Quality Points: {total_quality_points}")
-    print(f"Total Credits: {total_credits}")
+    print(f"Total Units: {total_units}")
     print(f"QPI: {qpi:.2f}")
 
     # Grade QPI
@@ -265,36 +265,36 @@ while True:
         else:
             print("Invalid grade!")
 
-    # Get credits
+    # Get units
     while True:
         try:
-            credits = int(input("Credits: "))
-            if credits > 0:
+            units = int(input("Units: "))
+            if units > 0:
                 break
             else:
-                print("Credits must be positive!")
+                print("Units must be positive!")
         except ValueError:
             print("Please enter a valid number!")
-
+    
     # Store grade
     all_grades.append({
         'subject': subject,
         'grade': grade,
-        'credits': credits,
+        'units': units,
         'points': grade_points[grade]
     })
-
-    print(f"Added: {subject} - {grade} ({credits} credits)")
+    
+    print(f"Added: {subject} - {grade} ({units} units)")
 
 # Calculate and display QPI
 if all_grades:
-    total_points = sum(grade['points'] * grade['credits'] for grade in all_grades)
-    total_credits = sum(grade['credits'] for grade in all_grades)
-    qpi = total_points / total_credits
-
+    total_points = sum(grade['points'] * grade['units'] for grade in all_grades)
+    total_units = sum(grade['units'] for grade in all_grades)
+    qpi = total_points / total_units
+    
     print(f"\n=== Final QPI Report ===")
     print(f"Total Subjects: {len(all_grades)}")
-    print(f"Total Credits: {total_credits}")
+    print(f"Total Units: {total_units}")
     print(f"QPI: {qpi:.2f}")
 else:
     print("No grades entered!")

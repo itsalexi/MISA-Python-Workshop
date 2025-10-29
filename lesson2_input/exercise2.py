@@ -1,16 +1,17 @@
 # Exercise 2: Grade Input
+# Check answers/exercise2.py for the solution
 
-# Get grade information from user
-print("=== Grade Entry ===")
+# TODO: Print header "=== Grade Entry ==="
 
-# Get subject and grade
-subject = input("Enter subject name: ")
-grade = input("Enter grade (A+, A, B+, B, etc.): ")
 
-# Get number of credits
-credits = int(input("Enter number of credits: "))
+# TODO: Get subject name from user
 
-# Display the information
-print(f"\nSubject: {subject}")
-print(f"Grade: {grade}")
-print(f"Credits: {credits}")
+
+# TODO: Get grade from user
+
+
+# TODO: Get number of units from user (convert to integer)
+
+
+# TODO: Display the subject, grade, and units
+

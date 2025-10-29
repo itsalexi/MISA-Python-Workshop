@@ -1,28 +1,13 @@
 # Exercise 2: Quality Points Assignment
+# Check answers/exercise2.py for the solution
 
-# Get grade from user
-grade = input("Enter your grade (A, B+, B, C+, C, etc.): ")
+# TODO: Get grade from user (prompt: "Enter your grade (A, B+, B, C+, C, etc.): ")
 
-# Assign quality points based on grade
-if grade == "A":
-    quality_points = 4.0
-elif grade == "B+":
-    quality_points = 3.5
-elif grade == "B":
-    quality_points = 3.0
-elif grade == "C+":
-    quality_points = 2.5
-elif grade == "C":
-    quality_points = 2.0
-elif grade == "D":
-    quality_points = 1.0
-elif grade == "F":
-    quality_points = 0.0
-else:
-    quality_points = None
-    print("Invalid grade!")
 
-# Display result
-if quality_points is not None:
-    print(f"Grade: {grade}")
-    print(f"Quality Points: {quality_points}")
+# TODO: Use if/elif/else to assign quality points based on grade
+# A: 4.0, B+: 3.5, B: 3.0, C+: 2.5, C: 2.0, D: 1.0, F: 0.0
+# If invalid grade, set quality_points to None and print "Invalid grade!"
+
+
+# TODO: Display the grade and quality points (only if quality_points is not None)
+

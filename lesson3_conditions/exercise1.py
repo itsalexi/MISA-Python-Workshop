@@ -1,22 +1,16 @@
 # Exercise 1: Grade Categorization
+# Check answers/exercise1.py for the solution
 
-# Get grade from user
-grade = input("Enter your grade (A, B+, B, C+, C, etc.): ")
+# TODO: Get grade from user (prompt: "Enter your grade (A, B+, B, C+, C, etc.): ")
 
-# Categorize the grade
-if grade == "A":
-    print("Outstanding! Excellent performance!")
-elif grade == "B+":
-    print("Very Good! Above average performance!")
-elif grade == "B":
-    print("Good! Satisfactory performance!")
-elif grade == "C+":
-    print("Fair! Room for improvement!")
-elif grade == "C":
-    print("Passing! Work harder next time!")
-elif grade == "D":
-    print("Poor! Must improve significantly!")
-elif grade == "F":
-    print("Failed! Must retake the course!")
-else:
-    print("Invalid grade entered!")
+
+# TODO: Use if/elif/else to categorize the grade and print appropriate messages
+# A: "Outstanding! Excellent performance!"
+# B+: "Very Good! Above average performance!"
+# B: "Good! Satisfactory performance!"
+# C+: "Fair! Room for improvement!"
+# C: "Passing! Work harder next time!"
+# D: "Poor! Must improve significantly!"
+# F: "Failed! Must retake the course!"
+# else: "Invalid grade entered!"
+

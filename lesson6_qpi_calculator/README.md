@@ -13,11 +13,11 @@ In this final lesson, you'll build a complete QPI calculator by combining everyt
 
 ## QPI Formula
 
-QPI = (Sum of (Grade Points × Credits)) / Total Credits
+QPI = (Sum of (Grade Points × Units)) / Total Units
 
 Where:
 - Grade Points: A = 4.0, B+ = 3.5, B = 3.0, C+ = 2.5, C = 2.0, D = 1.0, F = 0.0
-- Credits: Number of credit hours for each subject
+- Units: Number of units for each subject
 
 ## Building the Calculator Step by Step
 
@@ -97,17 +97,17 @@ for i in range(num_subjects):
     print(f"\nSubject {i+1}:")
     subject = input("Subject name: ")
     grade = input("Grade: ")
-    credits = int(input("Number of credits: "))
+    units = int(input("Number of units: "))
     
     # Store subject information
     subjects.append({
         'name': subject,
         'grade': grade,
-        'credits': credits,
+        'units': units,
         'points': grade_points[grade]
     })
     
-    print(f"Added: {subject} - {grade} ({credits} credits)")
+    print(f"Added: {subject} - {grade} ({units} units)")
 ```
 
 **Concepts used:** For loops, range(), dictionaries (nested), list append, dictionary lookup
@@ -124,18 +124,18 @@ print("\n--- Step 4: Calculating QPI ---")
 
 # Calculate totals
 total_quality_points = 0
-total_credits = 0
+total_units = 0
 
 print("\nGrade Summary:")
 for sub in subjects:
-    weighted_points = sub['points'] * sub['credits']
+    weighted_points = sub['points'] * sub['units']
     total_quality_points += weighted_points
-    total_credits += sub['credits']
+    total_units += sub['units']
     
-    print(f"{sub['name']}: {sub['grade']} ({sub['credits']} credits, {sub['points']} points)")
+    print(f"{sub['name']}: {sub['grade']} ({sub['units']} units, {sub['points']} points)")
 
 # Calculate QPI
-qpi = total_quality_points / total_credits
+qpi = total_quality_points / total_units
 ```
 
 **Concepts used:** Loops (iterating through list), calculations, accumulator pattern
@@ -151,7 +151,7 @@ Show the final results and determine academic standing:
 print("\n--- Final Results ---")
 print(f"Student: {student_name}")
 print(f"Total Quality Points: {total_quality_points}")
-print(f"Total Credits: {total_credits}")
+print(f"Total Units: {total_units}")
 print(f"QPI: {qpi:.2f}")
 
 # Academic standing
@@ -214,41 +214,41 @@ for i in range(num_subjects):
     print(f"\nSubject {i+1}:")
     subject = input("Subject name: ")
     grade = input("Grade: ")
-    credits = int(input("Number of credits: "))
+    units = int(input("Number of units: "))
     
     # Store subject information
     subjects.append({
         'name': subject,
         'grade': grade,
-        'credits': credits,
+        'units': units,
         'points': grade_points[grade]
     })
     
-    print(f"Added: {subject} - {grade} ({credits} credits)")
+    print(f"Added: {subject} - {grade} ({units} units)")
 
 # Step 5: Calculate QPI
 print("\n--- Step 4: Calculating QPI ---")
 
 # Calculate totals
 total_quality_points = 0
-total_credits = 0
+total_units = 0
 
 print("\nGrade Summary:")
 for sub in subjects:
-    weighted_points = sub['points'] * sub['credits']
+    weighted_points = sub['points'] * sub['units']
     total_quality_points += weighted_points
-    total_credits += sub['credits']
+    total_units += sub['units']
     
-    print(f"{sub['name']}: {sub['grade']} ({sub['credits']} credits, {sub['points']} points)")
+    print(f"{sub['name']}: {sub['grade']} ({sub['units']} units, {sub['points']} points)")
 
 # Calculate QPI
-qpi = total_quality_points / total_credits
+qpi = total_quality_points / total_units
 
 # Step 6: Display Results
 print("\n--- Final Results ---")
 print(f"Student: {student_name}")
 print(f"Total Quality Points: {total_quality_points}")
-print(f"Total Credits: {total_credits}")
+print(f"Total Units: {total_units}")
 print(f"QPI: {qpi:.2f}")
 
 # Academic standing

@@ -80,13 +80,13 @@ print("=== Grade Entry ===")
 subject = input("Enter subject name: ")
 grade = input("Enter grade (A+, A, B+, B, etc.): ")
 
-# Get number of credits
-credits = int(input("Enter number of credits: "))
+# Get number of units
+units = int(input("Enter number of units: "))
 
 # Display the information
 print(f"\nSubject: {subject}")
 print(f"Grade: {grade}")
-print(f"Credits: {credits}")
+print(f"Units: {units}")
 ```
 
 ## Exercise 3: Multiple Grade Input
@@ -102,20 +102,20 @@ print("=== Grade Entry System ===")
 num_subjects = int(input("How many subjects do you have? "))
 
 # Initialize variables
-total_credits = 0
+total_units = 0
 
 # Loop to get each subject's information
 for i in range(num_subjects):
     print(f"\nSubject {i+1}:")
     subject = input("Enter subject name: ")
     grade = input("Enter grade: ")
-    credits = int(input("Enter credits: "))
+    units = int(input("Enter units: "))
+    
+    total_units += units
+    
+    print(f"Added: {subject} - {grade} ({units} units)")
 
-    total_credits += credits
-
-    print(f"Added: {subject} - {grade} ({credits} credits)")
-
-print(f"\nTotal credits: {total_credits}")
+print(f"\nTotal units: {total_units}")
 ```
 
 ## Key Concepts

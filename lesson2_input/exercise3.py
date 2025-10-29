@@ -1,22 +1,24 @@
 # Exercise 3: Multiple Grade Input
+# Check answers/exercise3.py for the solution
 
-print("=== Grade Entry System ===")
+# TODO: Print header "=== Grade Entry System ==="
 
-# Get number of subjects
-num_subjects = int(input("How many subjects do you have? "))
 
-# Initialize variables
-total_credits = 0
+# TODO: Get number of subjects from user (convert to integer)
 
-# Loop to get each subject's information
-for i in range(num_subjects):
-    print(f"\nSubject {i+1}:")
-    subject = input("Enter subject name: ")
-    grade = input("Enter grade: ")
-    credits = int(input("Enter credits: "))
-    
-    total_credits += credits
-    
-    print(f"Added: {subject} - {grade} ({credits} credits)")
 
-print(f"\nTotal credits: {total_credits}")
+# TODO: Initialize a variable to track total units (start at 0)
+
+
+# TODO: Create a loop to get information for each subject
+# For each subject:
+#   - Print which subject number (Subject 1, Subject 2, etc.)
+#   - Get subject name
+#   - Get grade
+#   - Get units (convert to integer)
+#   - Add units to total
+#   - Print confirmation message
+
+
+# TODO: Print the total units
+
