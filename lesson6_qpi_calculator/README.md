@@ -4,405 +4,268 @@
 
 - Combine all Python concepts learned in previous lessons
 - Build a complete, user-friendly QPI calculator
-- Practice error handling and input validation
-- Create a polished application with clear output
+- Practice implementing a real-world application step by step
+- Create a polished program with clear output
 
 ## Project Overview
 
-In this final lesson, you'll build a complete QPI calculator that:
-
-- Gets student information
-- Collects multiple subject grades and credits
-- Calculates QPI using weighted averages
-- Provides detailed grade reports
-- Handles errors gracefully
-- Offers multiple calculation modes
+In this final lesson, you'll build a complete QPI calculator by combining everything you've learned. We'll build it step by step, adding one feature at a time.
 
 ## QPI Formula
 
 QPI = (Sum of (Grade Points × Credits)) / Total Credits
 
 Where:
-
-- Grade Points: A+ = 4.0, A = 4.0, A- = 3.7, B+ = 3.3, B = 3.0, etc.
+- Grade Points: A = 4.0, B+ = 3.5, B = 3.0, C+ = 2.5, C = 2.0, D = 1.0, F = 0.0
 - Credits: Number of credit hours for each subject
 
-## Features to Implement
+## Building the Calculator Step by Step
 
-1. **Student Information Entry**
-2. **Grade Collection with Validation**
-3. **Credit Hours Management**
-4. **QPI Calculation**
-5. **Grade Reports**
-6. **Error Handling**
-7. **Multiple Calculation Options**
+Create `qpi_calculator_complete.py` and follow along!
 
-## Exercise 1: Basic QPI Calculator
+### Part 1: Setup and Student Information
 
-Create `qpi_calculator_basic.py`:
+Start with the basic structure and get student information:
 
 ```python
-# Basic QPI Calculator
+"""
+Complete QPI Calculator
+Combines all Python concepts learned in previous lessons
+"""
 
-def main():
-    print("=== QPI Calculator ===")
+print("=== Complete QPI Calculator ===")
+print("Let's build a QPI calculator step by step!")
 
-    # Student information
-    student_name = input("Enter student name: ")
-
-    # Grade-to-quality-point mapping
-    grade_points = {
-        "A+": 4.0, "A": 4.0, "A-": 3.7,
-        "B+": 3.3, "B": 3.0, "B-": 2.7,
-        "C+": 2.3, "C": 2.0, "C-": 1.7,
-        "D": 1.0, "F": 0.0
-    }
-
-    # Get number of subjects
-    num_subjects = int(input("How many subjects? "))
-
-    # Collect grades
-    subjects = []
-    for i in range(num_subjects):
-        print(f"\nSubject {i+1}:")
-        subject = input("Subject name: ")
-        grade = input("Grade: ")
-        credits = int(input("Credits: "))
-
-        subjects.append({
-            'name': subject,
-            'grade': grade,
-            'credits': credits,
-            'points': grade_points.get(grade, 0.0)
-        })
-
-    # Calculate QPI
-    total_points = sum(sub['points'] * sub['credits'] for sub in subjects)
-    total_credits = sum(sub['credits'] for sub in subjects)
-    qpi = total_points / total_credits
-
-    # Display results
-    print(f"\n=== QPI Report for {student_name} ===")
-    for sub in subjects:
-        print(f"{sub['name']}: {sub['grade']} ({sub['credits']} credits)")
-    print(f"\nQPI: {qpi:.2f}")
-
-if __name__ == "__main__":
-    main()
+# Step 1: Variables and Input
+print("\n--- Step 1: Getting Student Information ---")
+student_name = input("Enter student name: ")
 ```
 
-## Exercise 2: Advanced QPI Calculator
+**Concepts used:** Variables, user input, string formatting
 
-Create `qpi_calculator_advanced.py`:
+---
+
+### Part 2: Grade Mapping Dictionary
+
+Add the grade-to-quality-point mapping:
 
 ```python
-# Advanced QPI Calculator with Error Handling
+# Step 2: Dictionary for Grade Mapping
+print("\n--- Step 2: Grade to Quality Points Mapping ---")
+grade_points = {
+    "A": 4.0,
+    "B+": 3.5,
+    "B": 3.0,
+    "C+": 2.5,
+    "C": 2.0,
+    "D": 1.0,
+    "F": 0.0
+}
 
-def get_valid_grade():
-    """Get a valid grade from user with error handling"""
-    valid_grades = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F"]
-
-    while True:
-        grade = input("Grade: ").upper()
-        if grade in valid_grades:
-            return grade
-        else:
-            print("Invalid grade! Valid grades:", ", ".join(valid_grades))
-
-def get_valid_credits():
-    """Get valid credits from user with error handling"""
-    while True:
-        try:
-            credits = int(input("Credits: "))
-            if credits > 0:
-                return credits
-            else:
-                print("Credits must be positive!")
-        except ValueError:
-            print("Please enter a valid number!")
-
-def calculate_qpi(subjects):
-    """Calculate QPI from list of subjects"""
-    if not subjects:
-        return 0.0
-
-    total_points = sum(sub['points'] * sub['credits'] for sub in subjects)
-    total_credits = sum(sub['credits'] for sub in subjects)
-
-    return total_points / total_credits if total_credits > 0 else 0.0
-
-def get_grade_level(qpi):
-    """Determine grade level based on QPI"""
-    if qpi >= 3.7:
-        return "Excellent - Dean's List Level!"
-    elif qpi >= 3.0:
-        return "Good - Above Average!"
-    elif qpi >= 2.0:
-        return "Satisfactory - Keep Improving!"
-    else:
-        return "Needs Improvement - Focus on Studies!"
-
-def main():
-    print("=== Advanced QPI Calculator ===")
-
-    # Grade-to-quality-point mapping
-    grade_points = {
-        "A+": 4.0, "A": 4.0, "A-": 3.7,
-        "B+": 3.3, "B": 3.0, "B-": 2.7,
-        "C+": 2.3, "C": 2.0, "C-": 1.7,
-        "D": 1.0, "F": 0.0
-    }
-
-    # Student information
-    student_name = input("Enter student name: ")
-    course = input("Enter course/program: ")
-
-    # Get number of subjects
-    while True:
-        try:
-            num_subjects = int(input("How many subjects? "))
-            if num_subjects > 0:
-                break
-            else:
-                print("Number of subjects must be positive!")
-        except ValueError:
-            print("Please enter a valid number!")
-
-    # Collect grades
-    subjects = []
-    print(f"\nEnter grades for {num_subjects} subjects:")
-
-    for i in range(num_subjects):
-        print(f"\nSubject {i+1}:")
-        subject = input("Subject name: ")
-        grade = get_valid_grade()
-        credits = get_valid_credits()
-
-        subjects.append({
-            'name': subject,
-            'grade': grade,
-            'credits': credits,
-            'points': grade_points[grade]
-        })
-
-        print(f"✓ Added: {subject} - {grade} ({credits} credits)")
-
-    # Calculate QPI
-    qpi = calculate_qpi(subjects)
-
-    # Display comprehensive report
-    print(f"\n{'='*50}")
-    print(f"QPI REPORT FOR {student_name.upper()}")
-    print(f"Course: {course}")
-    print(f"{'='*50}")
-
-    print(f"\n{'Subject':<20} {'Grade':<6} {'Credits':<8} {'Points':<6}")
-    print("-" * 50)
-
-    total_credits = 0
-    total_weighted_points = 0
-
-    for sub in subjects:
-        weighted_points = sub['points'] * sub['credits']
-        total_weighted_points += weighted_points
-        total_credits += sub['credits']
-
-        print(f"{sub['name']:<20} {sub['grade']:<6} {sub['credits']:<8} {sub['points']:<6}")
-
-    print("-" * 50)
-    print(f"{'TOTALS':<20} {'':<6} {total_credits:<8} {total_weighted_points:<6}")
-
-    print(f"\nQPI Calculation:")
-    print(f"Total Weighted Points: {total_weighted_points}")
-    print(f"Total Credits: {total_credits}")
-    print(f"QPI: {qpi:.2f}")
-    print(f"Grade Level: {get_grade_level(qpi)}")
-
-    # Grade distribution
-    grade_count = {}
-    for sub in subjects:
-        grade = sub['grade']
-        grade_count[grade] = grade_count.get(grade, 0) + 1
-
-    print(f"\nGrade Distribution:")
-    for grade, count in sorted(grade_count.items()):
-        print(f"{grade}: {count} subject(s)")
-
-if __name__ == "__main__":
-    main()
+print("Grade mapping:")
+for grade, points in grade_points.items():
+    print(f"  {grade}: {points}")
 ```
 
-## Exercise 3: Interactive QPI Calculator
+**Concepts used:** Dictionaries, loops (for iterating through dictionary)
 
-Create `qpi_calculator_interactive.py`:
+---
+
+### Part 3: Collecting Subject Data
+
+Get the number of subjects and prepare to collect data:
 
 ```python
-# Interactive QPI Calculator with Menu System
+# Step 3: Get Number of Subjects
+print("\n--- Step 3: Collecting Grades ---")
+num_subjects = int(input("How many subjects do you have? "))
 
-class QPICalculator:
-    def __init__(self):
-        self.grade_points = {
-            "A+": 4.0, "A": 4.0, "A-": 3.7,
-            "B+": 3.3, "B": 3.0, "B-": 2.7,
-            "C+": 2.3, "C": 2.0, "C-": 1.7,
-            "D": 1.0, "F": 0.0
-        }
-        self.subjects = []
-        self.student_name = ""
-        self.course = ""
-
-    def add_subject(self):
-        """Add a new subject"""
-        print("\n--- Add New Subject ---")
-        subject = input("Subject name: ")
-        grade = self.get_valid_grade()
-        credits = self.get_valid_credits()
-
-        self.subjects.append({
-            'name': subject,
-            'grade': grade,
-            'credits': credits,
-            'points': self.grade_points[grade]
-        })
-
-        print(f"✓ Added: {subject} - {grade} ({credits} credits)")
-
-    def get_valid_grade(self):
-        """Get valid grade from user"""
-        valid_grades = list(self.grade_points.keys())
-        while True:
-            grade = input("Grade: ").upper()
-            if grade in valid_grades:
-                return grade
-            else:
-                print("Invalid grade! Valid grades:", ", ".join(valid_grades))
-
-    def get_valid_credits(self):
-        """Get valid credits from user"""
-        while True:
-            try:
-                credits = int(input("Credits: "))
-                if credits > 0:
-                    return credits
-                else:
-                    print("Credits must be positive!")
-            except ValueError:
-                print("Please enter a valid number!")
-
-    def display_grades(self):
-        """Display all current grades"""
-        if not self.subjects:
-            print("No grades entered yet!")
-            return
-
-        print(f"\n--- Current Grades ---")
-        print(f"{'Subject':<20} {'Grade':<6} {'Credits':<8}")
-        print("-" * 40)
-        for sub in self.subjects:
-            print(f"{sub['name']:<20} {sub['grade']:<6} {sub['credits']:<8}")
-
-    def calculate_qpi(self):
-        """Calculate and display QPI"""
-        if not self.subjects:
-            print("No grades to calculate!")
-            return
-
-        qpi = sum(sub['points'] * sub['credits'] for sub in self.subjects) / sum(sub['credits'] for sub in self.subjects)
-
-        print(f"\n--- QPI Calculation ---")
-        print(f"QPI: {qpi:.2f}")
-
-        if qpi >= 3.7:
-            print("Excellent! Dean's List Level!")
-        elif qpi >= 3.0:
-            print("Good! Above Average Performance!")
-        elif qpi >= 2.0:
-            print("Satisfactory! Keep Improving!")
-        else:
-            print("Needs Improvement! Focus on Studies!")
-
-    def clear_grades(self):
-        """Clear all grades"""
-        self.subjects = []
-        print("All grades cleared!")
-
-    def show_menu(self):
-        """Display main menu"""
-        print(f"\n=== QPI Calculator ===")
-        print(f"Student: {self.student_name}")
-        print(f"Course: {self.course}")
-        print(f"Subjects: {len(self.subjects)}")
-        print("\n1. Add Subject")
-        print("2. View Grades")
-        print("3. Calculate QPI")
-        print("4. Clear All Grades")
-        print("5. Exit")
-
-    def run(self):
-        """Main program loop"""
-        print("Welcome to the QPI Calculator!")
-        self.student_name = input("Enter student name: ")
-        self.course = input("Enter course/program: ")
-
-        while True:
-            self.show_menu()
-            choice = input("\nEnter your choice (1-5): ")
-
-            if choice == "1":
-                self.add_subject()
-            elif choice == "2":
-                self.display_grades()
-            elif choice == "3":
-                self.calculate_qpi()
-            elif choice == "4":
-                self.clear_grades()
-            elif choice == "5":
-                print("Thank you for using QPI Calculator!")
-                break
-            else:
-                print("Invalid choice! Please enter 1-5.")
-
-if __name__ == "__main__":
-    calculator = QPICalculator()
-    calculator.run()
+# Step 4: Collect Grades Using Loops
+subjects = []
 ```
 
-## Key Features Implemented
+**Concepts used:** Type conversion (int), lists
 
-1. **Error Handling**: Validates all user input
-2. **User-Friendly Interface**: Clear menus and prompts
-3. **Comprehensive Reports**: Detailed grade analysis
-4. **Modular Design**: Functions for different operations
-5. **Interactive System**: Menu-driven interface
-6. **Grade Validation**: Ensures only valid grades are entered
-7. **Credit Validation**: Ensures positive credit values
+---
 
-## Testing Your Calculator
+### Part 4: Loop to Collect Multiple Subjects
 
-Test your calculator with these sample inputs:
+Use a loop to collect information for each subject:
 
-**Student:** Juan Dela Cruz
-**Course:** Computer Science
-**Subjects:**
+```python
+for i in range(num_subjects):
+    print(f"\nSubject {i+1}:")
+    subject = input("Subject name: ")
+    grade = input("Grade: ")
+    credits = int(input("Number of credits: "))
+    
+    # Store subject information
+    subjects.append({
+        'name': subject,
+        'grade': grade,
+        'credits': credits,
+        'points': grade_points[grade]
+    })
+    
+    print(f"Added: {subject} - {grade} ({credits} credits)")
+```
 
-- Mathematics: A+ (3 credits)
-- Physics: B+ (3 credits)
-- Programming: A (3 credits)
-- English: B (3 credits)
-- History: A- (2 credits)
+**Concepts used:** For loops, range(), dictionaries (nested), list append, dictionary lookup
 
-**Expected QPI:** (4.0×3 + 3.3×3 + 4.0×3 + 3.0×3 + 3.7×2) / 14 = 3.64
+---
 
-## Congratulations!
+### Part 5: Calculate QPI
 
-You've successfully built a complete QPI calculator using all the Python concepts you learned:
+Calculate the weighted average:
 
-- Variables and data storage
-- User input handling
-- Conditional statements
-- Dictionaries for grade mapping
-- Loops for processing multiple grades
-- Error handling and validation
-- Modular programming with functions
+```python
+# Step 5: Calculate QPI
+print("\n--- Step 4: Calculating QPI ---")
 
-This project demonstrates how different Python concepts work together to create a useful application!
+# Calculate totals
+total_quality_points = 0
+total_credits = 0
+
+print("\nGrade Summary:")
+for sub in subjects:
+    weighted_points = sub['points'] * sub['credits']
+    total_quality_points += weighted_points
+    total_credits += sub['credits']
+    
+    print(f"{sub['name']}: {sub['grade']} ({sub['credits']} credits, {sub['points']} points)")
+
+# Calculate QPI
+qpi = total_quality_points / total_credits
+```
+
+**Concepts used:** Loops (iterating through list), calculations, accumulator pattern
+
+---
+
+### Part 6: Display Results and Academic Standing
+
+Show the final results and determine academic standing:
+
+```python
+# Step 6: Display Results
+print("\n--- Final Results ---")
+print(f"Student: {student_name}")
+print(f"Total Quality Points: {total_quality_points}")
+print(f"Total Credits: {total_credits}")
+print(f"QPI: {qpi:.2f}")
+
+# Academic standing
+if qpi >= 3.7:
+    standing = "EXCELLENT - Dean's List Level!"
+elif qpi >= 3.0:
+    standing = "GOOD - Above Average Performance!"
+elif qpi >= 2.0:
+    standing = "SATISFACTORY - Keep Improving!"
+else:
+    standing = "NEEDS IMPROVEMENT - Focus on Studies!"
+
+print(f"Academic Standing: {standing}")
+```
+
+**Concepts used:** Conditional statements (if/elif/else), string formatting
+
+---
+
+## Complete Code
+
+Here's the complete program with all parts combined:
+
+```python
+"""
+Complete QPI Calculator
+Combines all Python concepts learned in previous lessons
+"""
+
+print("=== Complete QPI Calculator ===")
+print("Let's build a QPI calculator step by step!")
+
+# Step 1: Variables and Input
+print("\n--- Step 1: Getting Student Information ---")
+student_name = input("Enter student name: ")
+
+# Step 2: Dictionary for Grade Mapping
+print("\n--- Step 2: Grade to Quality Points Mapping ---")
+grade_points = {
+    "A": 4.0,
+    "B+": 3.5,
+    "B": 3.0,
+    "C+": 2.5,
+    "C": 2.0,
+    "D": 1.0,
+    "F": 0.0
+}
+
+print("Grade mapping:")
+for grade, points in grade_points.items():
+    print(f"  {grade}: {points}")
+
+# Step 3: Get Number of Subjects
+print("\n--- Step 3: Collecting Grades ---")
+num_subjects = int(input("How many subjects do you have? "))
+
+# Step 4: Collect Grades Using Loops
+subjects = []
+for i in range(num_subjects):
+    print(f"\nSubject {i+1}:")
+    subject = input("Subject name: ")
+    grade = input("Grade: ")
+    credits = int(input("Number of credits: "))
+    
+    # Store subject information
+    subjects.append({
+        'name': subject,
+        'grade': grade,
+        'credits': credits,
+        'points': grade_points[grade]
+    })
+    
+    print(f"Added: {subject} - {grade} ({credits} credits)")
+
+# Step 5: Calculate QPI
+print("\n--- Step 4: Calculating QPI ---")
+
+# Calculate totals
+total_quality_points = 0
+total_credits = 0
+
+print("\nGrade Summary:")
+for sub in subjects:
+    weighted_points = sub['points'] * sub['credits']
+    total_quality_points += weighted_points
+    total_credits += sub['credits']
+    
+    print(f"{sub['name']}: {sub['grade']} ({sub['credits']} credits, {sub['points']} points)")
+
+# Calculate QPI
+qpi = total_quality_points / total_credits
+
+# Step 6: Display Results
+print("\n--- Final Results ---")
+print(f"Student: {student_name}")
+print(f"Total Quality Points: {total_quality_points}")
+print(f"Total Credits: {total_credits}")
+print(f"QPI: {qpi:.2f}")
+
+# Academic standing
+if qpi >= 3.7:
+    standing = "EXCELLENT - Dean's List Level!"
+elif qpi >= 3.0:
+    standing = "GOOD - Above Average Performance!"
+elif qpi >= 2.0:
+    standing = "SATISFACTORY - Keep Improving!"
+else:
+    standing = "NEEDS IMPROVEMENT - Focus on Studies!"
+
+print(f"Academic Standing: {standing}")
+```
+
+## Congratulations! 🎉
+
+You've successfully built a complete QPI calculator! This project demonstrates how different Python concepts work together to create a useful, real-world application.
+
+Great job completing the Python workshop! 🐍

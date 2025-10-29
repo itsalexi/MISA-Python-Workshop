@@ -1,14 +1,17 @@
 # Exercise 2: Grade Input with Validation
 
 # Valid grades
-valid_grades = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F"]
+valid_grades = ["A", "B+", "B", "C+", "C", "D", "F"]
 
 # Grade-to-quality-point mapping
 grade_points = {
-    "A+": 4.0, "A": 4.0, "A-": 3.7,
-    "B+": 3.3, "B": 3.0, "B-": 2.7,
-    "C+": 2.3, "C": 2.0, "C-": 1.7,
-    "D": 1.0, "F": 0.0
+    "A": 4.0,
+    "B+": 3.5,
+    "B": 3.0,
+    "C+": 2.5,
+    "C": 2.0,
+    "D": 1.0,
+    "F": 0.0
 }
 
 # Get number of subjects

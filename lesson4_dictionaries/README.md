@@ -16,11 +16,11 @@ Dictionaries are data structures that store key-value pairs. Think of them like 
 ```python
 # Creating a dictionary
 grade_points = {
-    "A+": 4.0,
     "A": 4.0,
-    "A-": 3.7,
-    "B+": 3.3,
-    "B": 3.0
+    "B+": 3.5,
+    "B": 3.0,
+    "C+": 2.5,
+    "C": 2.0
 }
 
 # Empty dictionary
@@ -31,7 +31,7 @@ empty_dict = {}
 
 ```python
 # Get value using key
-grade_points = {"A+": 4.0, "A": 4.0, "B+": 3.3}
+grade_points = {"A": 4.0, "B+": 3.5, "B": 3.0}
 
 # Access values
 points = grade_points["A+"]  # Returns 4.0
@@ -42,7 +42,7 @@ points = grade_points["B+"]  # Returns 3.3
 
 ```python
 # Using get() method (safer)
-grade_points = {"A+": 4.0, "A": 4.0}
+grade_points = {"A": 4.0, "B+": 3.5}
 
 # Returns value if key exists, otherwise returns default
 points = grade_points.get("A+", 0.0)  # Returns 4.0
@@ -52,7 +52,7 @@ points = grade_points.get("Z", 0.0)   # Returns 0.0 (default)
 ## Dictionary Methods
 
 ```python
-grade_points = {"A+": 4.0, "A": 4.0, "B+": 3.3}
+grade_points = {"A": 4.0, "B+": 3.5, "B": 3.0}
 
 # Get all keys
 keys = grade_points.keys()
@@ -77,15 +77,11 @@ Create `exercise1.py`:
 
 # Create a dictionary mapping grades to quality points
 grade_points = {
-    "A+": 4.0,
     "A": 4.0,
-    "A-": 3.7,
-    "B+": 3.3,
+    "B+": 3.5,
     "B": 3.0,
-    "B-": 2.7,
-    "C+": 2.3,
+    "C+": 2.5,
     "C": 2.0,
-    "C-": 1.7,
     "D": 1.0,
     "F": 0.0
 }
@@ -114,10 +110,13 @@ Create `exercise2.py`:
 
 # Dictionary for grade-to-quality-point mapping
 grade_points = {
-    "A+": 4.0, "A": 4.0, "A-": 3.7,
-    "B+": 3.3, "B": 3.0, "B-": 2.7,
-    "C+": 2.3, "C": 2.0, "C-": 1.7,
-    "D": 1.0, "F": 0.0
+    "A": 4.0,
+    "B+": 3.5,
+    "B": 3.0,
+    "C+": 2.5,
+    "C": 2.0,
+    "D": 1.0,
+    "F": 0.0
 }
 
 # Dictionary to store subject grades
@@ -154,10 +153,13 @@ Create `exercise3.py`:
 
 # Grade-to-quality-point mapping
 grade_points = {
-    "A+": 4.0, "A": 4.0, "A-": 3.7,
-    "B+": 3.3, "B": 3.0, "B-": 2.7,
-    "C+": 2.3, "C": 2.0, "C-": 1.7,
-    "D": 1.0, "F": 0.0
+    "A": 4.0,
+    "B+": 3.5,
+    "B": 3.0,
+    "C+": 2.5,
+    "C": 2.0,
+    "D": 1.0,
+    "F": 0.0
 }
 
 # Store grades

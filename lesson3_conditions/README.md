@@ -35,14 +35,14 @@ else:
 ```python
 # If-elif-else statement
 grade = "B+"
-if grade == "A+":
+if grade == "A":
     print("Outstanding!")
-elif grade == "A":
-    print("Excellent!")
 elif grade == "B+":
     print("Very Good!")
 elif grade == "B":
     print("Good!")
+elif grade == "C+":
+    print("Fair!")
 else:
     print("Keep trying!")
 ```
@@ -61,7 +61,7 @@ if grade == "A" and credits >= 3:
 
 ```python
 # At least one condition must be true
-if grade == "A+" or grade == "A":
+if grade == "A" or grade == "B+":
     print("Excellent performance")
 ```
 
@@ -81,27 +81,19 @@ Create `exercise1.py`:
 # Exercise 1: Grade Categorization
 
 # Get grade from user
-grade = input("Enter your grade (A+, A, B+, B, etc.): ")
+grade = input("Enter your grade (A, B+, B, C+, C, etc.): ")
 
 # Categorize the grade
-if grade == "A+":
-    print("Outstanding! Perfect performance!")
-elif grade == "A":
-    print("Excellent! Great job!")
-elif grade == "A-":
-    print("Very Good! Above average!")
+if grade == "A":
+    print("Outstanding! Excellent performance!")
 elif grade == "B+":
-    print("Good! Above average performance!")
+    print("Very Good! Above average performance!")
 elif grade == "B":
     print("Good! Satisfactory performance!")
-elif grade == "B-":
-    print("Satisfactory! Keep improving!")
 elif grade == "C+":
     print("Fair! Room for improvement!")
 elif grade == "C":
     print("Passing! Work harder next time!")
-elif grade == "C-":
-    print("Passing! Needs improvement!")
 elif grade == "D":
     print("Poor! Must improve significantly!")
 elif grade == "F":
@@ -118,27 +110,19 @@ Create `exercise2.py`:
 # Exercise 2: Quality Points Assignment
 
 # Get grade from user
-grade = input("Enter your grade (A+, A, B+, B, etc.): ")
+grade = input("Enter your grade (A, B+, B, C+, C, etc.): ")
 
 # Assign quality points based on grade
-if grade == "A+":
+if grade == "A":
     quality_points = 4.0
-elif grade == "A":
-    quality_points = 4.0
-elif grade == "A-":
-    quality_points = 3.7
 elif grade == "B+":
-    quality_points = 3.3
+    quality_points = 3.5
 elif grade == "B":
     quality_points = 3.0
-elif grade == "B-":
-    quality_points = 2.7
 elif grade == "C+":
-    quality_points = 2.3
+    quality_points = 2.5
 elif grade == "C":
     quality_points = 2.0
-elif grade == "C-":
-    quality_points = 1.7
 elif grade == "D":
     quality_points = 1.0
 elif grade == "F":
@@ -164,26 +148,20 @@ Create `exercise3.py`:
 grade = input("Enter your grade: ")
 
 # Validate grade and assign quality points
-valid_grades = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F"]
+valid_grades = ["A", "B+", "B", "C+", "C", "D", "F"]
 
 if grade in valid_grades:
     # Grade is valid, assign quality points
-    if grade in ["A+", "A"]:
+    if grade == "A":
         quality_points = 4.0
-    elif grade == "A-":
-        quality_points = 3.7
     elif grade == "B+":
-        quality_points = 3.3
+        quality_points = 3.5
     elif grade == "B":
         quality_points = 3.0
-    elif grade == "B-":
-        quality_points = 2.7
     elif grade == "C+":
-        quality_points = 2.3
+        quality_points = 2.5
     elif grade == "C":
         quality_points = 2.0
-    elif grade == "C-":
-        quality_points = 1.7
     elif grade == "D":
         quality_points = 1.0
     else:  # F

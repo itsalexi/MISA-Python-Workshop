@@ -1,27 +1,19 @@
 # Exercise 2: Quality Points Assignment
 
 # Get grade from user
-grade = input("Enter your grade (A+, A, B+, B, etc.): ")
+grade = input("Enter your grade (A, B+, B, C+, C, etc.): ")
 
 # Assign quality points based on grade
-if grade == "A+":
+if grade == "A":
     quality_points = 4.0
-elif grade == "A":
-    quality_points = 4.0
-elif grade == "A-":
-    quality_points = 3.7
 elif grade == "B+":
-    quality_points = 3.3
+    quality_points = 3.5
 elif grade == "B":
     quality_points = 3.0
-elif grade == "B-":
-    quality_points = 2.7
 elif grade == "C+":
-    quality_points = 2.3
+    quality_points = 2.5
 elif grade == "C":
     quality_points = 2.0
-elif grade == "C-":
-    quality_points = 1.7
 elif grade == "D":
     quality_points = 1.0
 elif grade == "F":
