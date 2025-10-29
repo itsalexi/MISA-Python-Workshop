@@ -115,9 +115,9 @@ Academic Standing: EXCELLENT - Dean's List Level!
 This project combines:
 - ✅ Variables
 - ✅ User Input
-- ✅ Dictionaries
-- ✅ Loops (for)
 - ✅ Conditionals (if/elif/else)
+- ✅ Loops (for)
+- ✅ Dictionaries
 - ✅ Lists
 - ✅ Calculations
 - ✅ String Formatting

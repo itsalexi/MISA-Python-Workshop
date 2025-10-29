@@ -41,20 +41,28 @@ A complete QPI calculator that:
 - Making decisions in code
 - Categorizing grades
 
-### Lesson 4: Dictionaries
-- Creating and using dictionaries
-- Mapping grades to quality points
-- Key-value relationships
-- Dictionary methods
-
-### Lesson 5: Loops
+### Lesson 4: Loops
 - For loops and while loops
 - Processing multiple grades
 - Iterating through data structures
 - The `range()` function
 
+### Lesson 5: Dictionaries
+- Creating and using dictionaries
+- Mapping grades to quality points
+- Key-value relationships
+- Dictionary methods
+
 ### Lesson 6: Complete QPI Calculator
-- Combining all concepts
+This final project combines all the concepts you've learned:
+
+1. **Variables** - Storing student information and grades
+2. **User Input** - Getting data from the user
+3. **Conditionals** - Determining academic standing
+4. **Loops** - Collecting multiple subjects
+5. **Dictionaries** - Mapping grades to quality points
+6. **Lists** - Storing subject information
+7. **Calculations** - Computing weighted averages
 - Building the final application
 - Step-by-step implementation
 
@@ -92,8 +100,8 @@ Navigate through the lessons in this order:
 lesson1_variables/       → Learn about variables and data types
 lesson2_input/          → Get user input
 lesson3_conditions/     → Make decisions with if/elif/else
-lesson4_dictionaries/   → Map grades to quality points
-lesson5_loops/          → Process multiple items
+lesson4_loops/          → Process multiple items
+lesson5_dictionaries/   → Map grades to quality points
 lesson6_qpi_calculator/ → Build the complete calculator
 ```
 
